@@ -790,9 +790,9 @@ class AspectBasedSentimentAnalysisProsaDataset(Dataset):
         
     def __getitem__(self, index):
         data = self.data.loc[index,:]
-        sentence, labels = data['sentence'], [data[aspect] for aspect in self.ASPECT_DOMAIN]
+        sentence, labels = data['text'], [data[aspect] for aspect in self.ASPECT_DOMAIN]
         subwords = self.tokenizer.encode(sentence, add_special_tokens=not self.no_special_token)
-        return np.array(subwords), np.array(labels), data['sentence']
+        return np.array(subwords), np.array(labels), data['text']
     
     def __len__(self):
         return len(self.data)
