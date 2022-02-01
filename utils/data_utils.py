@@ -743,11 +743,11 @@ class QAFactoidDataLoader(DataLoader):
 #####
 class AspectBasedSentimentAnalysisAiryDataset(Dataset):
     # Static constant variable
-    ASPECT_DOMAIN = ['service', 'kebersihan', 'ruangan', 'makanan', 'fasilitas']
+    ASPECT_DOMAIN = ['service','kebersihan','ruangan','fasilitas']
     LABEL2INDEX = {'negative': 0, 'positive': 1}
     INDEX2LABEL = {0: 'negative', 1: 'positive'}
-    NUM_LABELS = [2, 2, 2, 2, 2]
-    NUM_ASPECTS = 5
+    NUM_LABELS = [2, 2, 2, 2]
+    NUM_ASPECTS = 4
     
     def load_dataset(self, path):
         df = pd.read_csv(path)
