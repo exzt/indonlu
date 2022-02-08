@@ -746,7 +746,7 @@ class AspectBasedSentimentAnalysisAiryDataset(Dataset):
     ASPECT_DOMAIN = ['service','kebersihan','ruangan']
     LABEL2INDEX = {'negative': 0, 'positive': 1}
     INDEX2LABEL = {0: 'negative', 1: 'positive'}
-    NUM_LABELS = [2, 2, 2
+    NUM_LABELS = [2, 2, 2]
     NUM_ASPECTS = 3
     
     def load_dataset(self, path):
