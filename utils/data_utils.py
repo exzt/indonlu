@@ -772,8 +772,8 @@ class AspectBasedSentimentAnalysisAiryDataset(Dataset):
 class AspectBasedSentimentAnalysisProsaDataset(Dataset):
     # Static constant variable
     ASPECT_DOMAIN = ['service', 'kebersihan','ruangan','makanan','fasilitas']
-    LABEL2INDEX = {0: 'negative',1: 'neutral',2: 'positive}
-    INDEX2LABEL = {'negative': 0, 'neutral': 1, 'positive': 2}
+    LABEL2INDEX = {0:'negative',1:'neutral',2:'positive}
+    INDEX2LABEL = {'negative': 0,'neutral': 1,'positive': 2}
     NUM_LABELS = [3, 3, 3, 3, 3]
     NUM_ASPECTS = 5
     
