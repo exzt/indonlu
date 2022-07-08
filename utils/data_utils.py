@@ -772,15 +772,15 @@ class AspectBasedSentimentAnalysisAiryDataset(Dataset):
 class AspectBasedSentimentAnalysisProsaDataset(Dataset):
     # Static constant variable
     ASPECT_DOMAIN = ['service', 'kebersihan','ruangan','makanan','fasilitas']
-    LABEL2INDEX = {0:'negative',1:'neutral',2:'positive}
-    INDEX2LABEL = {'negative': 0,'neutral': 1,'positive': 2}
+    LABEL2INDEX = {'negative': 0, 'neutral': 1, 'positive': 2}
+    INDEX2LABEL = {0: 'negative', 1: 'neutral', 2: 'positive'}
     NUM_LABELS = [3, 3, 3, 3, 3]
     NUM_ASPECTS = 5
     
     def load_dataset(self, path):
         df = pd.read_csv(path)
         for aspect in self.ASPECT_DOMAIN:
-            df[aspect] = df[aspect].apply(lambda sen: self.LABEL2INDEX[sen])
+            df[aspect] = df[aspect].apply(lambda sen: self.INDEX2LABEL[sen])
         return df
     
     def __init__(self, dataset_path, tokenizer, no_special_token=False, *args, **kwargs):
