@@ -780,7 +780,7 @@ class AspectBasedSentimentAnalysisProsaDataset(Dataset):
     def load_dataset(self, path):
         df = pd.read_csv(path)
         for aspect in self.ASPECT_DOMAIN:
-            df[aspect] = df[aspect].apply(lambda sen: self.INDEX2LABEL[sen])
+            df[aspect] = df[aspect].apply(lambda sen: self.LABEL2INDEX[sen])
         return df
     
     def __init__(self, dataset_path, tokenizer, no_special_token=False, *args, **kwargs):
